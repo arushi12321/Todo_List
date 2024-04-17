@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user");
 const List = require("../models/list");
 
-//create
+
 router.post("/addTask", async (req, res) => {
   try {
     const { title, body, id } = req.body;
@@ -18,7 +18,7 @@ router.post("/addTask", async (req, res) => {
   }
 });
 
-//update
+
 router.put("/updateTask/:id", async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -29,7 +29,7 @@ router.put("/updateTask/:id", async (req, res) => {
   }
 });
 
-//delete
+
 router.delete("/deleteTask/:id", async (req, res) => {
   try {
     const { id } = req.body;
@@ -46,7 +46,7 @@ router.delete("/deleteTask/:id", async (req, res) => {
   }
 });
 
-//getTska
+
 router.get("/getTasks/:id", async (req, res) => {
   try {
     const list = await List.find({ user: req.params.id }).sort({
